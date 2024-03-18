@@ -3865,9 +3865,9 @@ for datas in films_awards:
         os.chdir(f"{get_current_dir()}/{movie['award_name'][0].upper()}")
 
         # create new txt file in A-Z dirs and create new file with name = award_name
-        with open(f'{movie["award_name"]}.txt', 'w') as file:
+        with open(f'{movie["award_name"]}.txt', 'a') as file:
             # add award to each file
-            file.write(movie["award"])
+            file.write(f'{movie["award"]}\n')
 
         # move back to Harry Potter directory after each iteration
         os.chdir("..")
